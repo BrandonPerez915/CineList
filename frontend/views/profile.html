@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="styles.css">
+  <script src="../components/Navbar.js"></script>
+  <script src="../components/UserProfileCard.js"></script>
+  <script src="../components/EditProfileModal.js"></script>
+</head>
+
+<body>
+  <cine-navbar user-name="Juan" user-avatar="https://i.pinimg.com/736x/29/c7/74/29c774e75daecdf5d3360bf9707272bb.jpg"></cine-navbar>
+
+  <user-profile-card style="width: 80%; margin: 20px auto;"
+    id="profile-card" name="Juan Pérez" handle="@juanperez"
+    bio="Amante del cine y las series."
+    ratings="142" favorites="38"
+    avatar="https://i.pinimg.com/736x/29/c7/74/29c774e75daecdf5d3360bf9707272bb.jpg">
+  </user-profile-card>
+
+  <edit-profile-modal
+    id="edit-modal"
+    name="Juan Pérez" username="@juanperez"
+    bio="Amante del cine y las series."
+    avatar="https://i.pinimg.com/736x/29/c7/74/29c774e75daecdf5d3360bf9707272bb.jpg">
+  </edit-profile-modal>
+
+  <script>
+    const card = document.getElementById('profile-card');
+    const modal = document.getElementById('edit-modal');
+
+    // modal abierto
+    card.addEventListener('profile-edit', () => {
+      modal.open();
+    });
+
+    
+  </script>
+</body>
