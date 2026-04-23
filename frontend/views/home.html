@@ -1,0 +1,60 @@
+<head>
+  <link rel="stylesheet" href="../assets/css/home.css">
+  <script src="../components/Navbar.js"></script>
+  <script src="../components/MovieHero.js"></script>
+  <script src="../components/MovieCard.js"></script>
+</head>
+
+<body style="padding: 0; margin: 0">
+  <cine-navbar user-name="Juan" `
+    user-avatar="https://i.pinimg.com/736x/29/c7/74/29c774e75daecdf5d3360bf9707272bb.jpg"></cine-navbar>
+
+  <movie-hero title="Proyecto Hail Mary" year="2024" rating="4.7"
+    background="https://imgs.search.brave.com/P_5sqBZ8iASldcADDWAu8OOLMwgEaQU1hgCT9xKSD3s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS50aGVtb3ZpZWRi/Lm9yZy90L3AvdzUz/M19hbmRfaDMwMF9m/YWNlLzhUZnlzM21E/WlZwNHROb0gya3Rt/MDZhMFRhdS5qcGc"
+    badge="Pelicula del dia">
+  </movie-hero>
+
+  <section id="popular-movies-section">
+    <h2>Peliculas Populares</h2>
+    <div class="movie-list"></div>
+  </section>
+
+  <section id="most-rated-movies-section">
+    <h2>Peliculas Mejor Calificadas</h2>
+    <div class="movie-list"></div>
+  </section>
+
+  <script>
+    const movieList = document.querySelector('#popular-movies-section .movie-list');
+    const mostRatedList = document.querySelector('#most-rated-movies-section .movie-list');
+
+    async function loadMovies() {
+      try {
+        const response = await fetch('../mocks/response.json');
+        const data = await response.json();
+
+        data.Search.forEach(movie => {
+          const movieCard = document.createElement('movie-card');
+          movieCard.setAttribute('title', movie.Title);
+          movieCard.setAttribute('year', movie.Year);
+          movieCard.setAttribute('poster', movie.Poster);
+          mostRatedList.appendChild(movieCard);
+          movieList.appendChild(movieCard);
+        });
+
+        data.Search.forEach(movie => {
+          const movieCard = document.createElement('movie-card');
+          movieCard.setAttribute('title', movie.Title);
+          movieCard.setAttribute('year', movie.Year);
+          movieCard.setAttribute('poster', movie.Poster);
+          mostRatedList.appendChild(movieCard);
+        });
+
+      } catch (error) {
+        console.error("Error cargando el JSON:", error);
+      }
+    }
+
+    loadMovies();
+  </script>
+</body>
