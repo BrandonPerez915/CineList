@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark"> <head>
+        <title>CineList</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <style>
+           
+            body {
+                background-color: #111 !important;
+                color: white;
+                margin: 0;
+                min-height: 100vh;
+                font-family: 'Inter', sans-serif;
+            }
+
+            .row {
+                --bs-gutter-x: 1.5rem;
+            }
+        </style>
+
+        <script src="../components/Navbar.js" defer></script>
+        <script src="../components/MovieCard.js" defer></script>
+        <script src="../components/PlaylistHeader.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <cine-navbar 
+                user-name="Alex" 
+                user-avatar="https://ui-avatars.com/api/?name=Alex&background=00d2ff&color=fff">
+            </cine-navbar>
+        </header>
+
+        <main>
+            
+            
+            <div class="container mt-4" style="margin: 40px;">
+                <!--<div class="container" >
+                    <h2 class="mb-4 " style="font-weight: 800; letter-spacing: -1px;">Romance !!</h2>
+                    <p class="mb-3 ms-4" style="color: rgb(237, 237, 237);"> 
+                        Pelis de Romance que arruinan mis estándares
+                    </p>
+                </div> -->
+                <playlist-header 
+                    list-title="Romance !!" 
+                    list-description="Pelis de Romance que arruinan mis estándares">
+                </playlist-header>
+                
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
+                    <div class="col">
+                        <movie-card 
+                            title="Love Rosie" 
+                            rating="7.1" 
+                            year="2014" 
+                            poster="https://m.media-amazon.com/images/S/pv-target-images/f77d27385643d5db4f83441c921a190df10bdd0e532b72fbd73b9b600d53d48c.jpg"
+                            data-imdb-id="tt1375666">
+                        </movie-card>
+                    </div>
+                    <div class="col">
+                        <movie-card 
+                            title="The notebook" 
+                            rating="7.8" 
+                            year="2004" 
+                            poster="https://play-lh.googleusercontent.com/diwQFEg8SEzGsVmuekKGL12LG2vAL2e2_dLPykY7VJwU5BGFys14C3oTpJCaaCPmAy7z=w240-h480-rw"
+                            data-imdb-id="tt0816692">
+                        </movie-card>
+                    </div>
+                    <div class="col">
+                        <movie-card 
+                            title="Love Rosie" 
+                            rating="7.1" 
+                            year="2014" 
+                            poster="https://m.media-amazon.com/images/S/pv-target-images/f77d27385643d5db4f83441c921a190df10bdd0e532b72fbd73b9b600d53d48c.jpg"
+                            data-imdb-id="tt1375666">
+                        </movie-card>
+                    </div>
+                    <div class="col">
+                        <movie-card 
+                            title="The notebook" 
+                            rating="7.8" 
+                            year="2004" 
+                            poster="https://play-lh.googleusercontent.com/diwQFEg8SEzGsVmuekKGL12LG2vAL2e2_dLPykY7VJwU5BGFys14C3oTpJCaaCPmAy7z=w240-h480-rw"
+                            data-imdb-id="tt0816692">
+                        </movie-card>
+                    </div>
+                    <div class="col">
+                        <movie-card 
+                            title="Love Rosie" 
+                            rating="7.1" 
+                            year="2014" 
+                            poster="https://m.media-amazon.com/images/S/pv-target-images/f77d27385643d5db4f83441c921a190df10bdd0e532b72fbd73b9b600d53d48c.jpg"
+                            data-imdb-id="tt1375666">
+                        </movie-card>
+                    </div>
+                    <div class="col">
+                        <movie-card 
+                            title="The notebook" 
+                            rating="7.8" 
+                            year="2004" 
+                            poster="https://play-lh.googleusercontent.com/diwQFEg8SEzGsVmuekKGL12LG2vAL2e2_dLPykY7VJwU5BGFys14C3oTpJCaaCPmAy7z=w240-h480-rw"
+                            data-imdb-id="tt0816692">
+                        </movie-card>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
