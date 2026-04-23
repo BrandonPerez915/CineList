@@ -248,7 +248,7 @@ class EditProfileModal extends HTMLElement {
       <div class="backdrop"></div>
       <div class="modal-container">
         <div class="header">
-          <h2>Edit Profile</h2>
+          <h2>Editar Perfil</h2>
           <button class="close-btn" id="btn-close">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M18 6L6 18M6 6l12 12"/>
@@ -262,11 +262,11 @@ class EditProfileModal extends HTMLElement {
 
         <div class="form">
           <div class="field">
-            <label>Name</label>
+            <label>Nombre</label>
             <input type="text" id="input-name" placeholder="Tu nombre">
           </div>
           <div class="field">
-            <label>Username</label>
+            <label>Usuario</label>
             <input type="text" id="input-user" placeholder="@username">
           </div>
           <div class="field">
@@ -274,8 +274,8 @@ class EditProfileModal extends HTMLElement {
             <textarea id="input-bio"></textarea>
           </div>
           <div class="form-actions">
-            <button class="delete-btn" id="btn-delete">Delete User</button>
-            <button class="save-btn" id="btn-save">Save Changes</button>
+            <button class="delete-btn" id="btn-delete">Eliminar Usuario</button>
+            <button class="save-btn" id="btn-save">Guardar Cambios</button>
           </div>
 
           <div class="confirm-overlay" id="confirm-overlay">
@@ -318,6 +318,10 @@ class EditProfileModal extends HTMLElement {
 
     this.shadowRoot.getElementById('btn-cancel-delete').onclick = () => {
       this.shadowRoot.getElementById('confirm-overlay').classList.remove('visible');
+    };
+
+    this.shadowRoot.querySelector('.confirm-delete').onclick = () => {
+      window.location.href = '../views/landing.html';
     };
 
     this._update();

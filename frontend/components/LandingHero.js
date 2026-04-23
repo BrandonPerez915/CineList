@@ -13,9 +13,9 @@ landingHeroSheet.replaceSync(`
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Ajustamos el padding para que no esté pegado al techo */
+    /* padding ajuste */
     padding: 60px 20px;
-    /* Agregamos una animación sutil de entrada */
+    /* Animación */
     animation: fadeIn 1s ease-out;
   }
 
@@ -33,7 +33,7 @@ landingHeroSheet.replaceSync(`
   }
 
   .logo-icon {
-    width: 80px; /* Logo más imponente */
+    width: 80px;
     height: 80px;
     fill: #00d2ff;
     filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.5));
@@ -114,7 +114,7 @@ class LandingHero extends HTMLElement {
           </svg>
           <h1 class="app-name">CineList</h1>
         </div>
-        <p class="tagline">Tu biblioteca personal de cine y series. Organiza tus listas y descubre nuevas historias con una interfaz moderna y elegante.</p>
+        <p class="tagline">Tu biblioteca personal de cine y series. Organiza tus listas y descubre nuevas historias.</p>
         <div class="cta-group">
           <a href="register.html" class="btn btn-primary">Empezar ahora</a>
           <a href="login.html" class="btn btn-secondary">Inicia sesión</a>
